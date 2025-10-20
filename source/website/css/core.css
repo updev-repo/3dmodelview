@@ -1,0 +1,134 @@
+:root
+{
+	--ov_only_on_model_display: inherit;
+}
+
+@font-face
+{
+	font-family: Quicksand;
+	src: url('Quicksand/Quicksand-Regular.ttf');
+}
+
+html, body
+{
+	color: var(--ov_foreground_color);
+	background: var(--ov_background_color);
+	font-size: 16px;
+	font-family: Quicksand, Helvetica, sans-serif;
+	width: 100%;
+	height: 100%;
+	margin: 0px;
+	padding: 0px;
+	overflow: hidden;
+}
+
+a
+{
+	color: var(--ov_button_color);
+	text-decoration: none;
+}
+
+img
+{
+	display: block;
+}
+
+ol, ul
+{
+	padding: 0px 25px;
+	margin: 0px;
+}
+
+li
+{
+	margin: 10px 0px;
+	line-height: 25px;
+}
+
+.only_on_model
+{
+	display: var(--ov_only_on_model_display);
+}
+
+input, select, textarea
+{
+	font-family: Quicksand, Helvetica, sans-serif;
+	font-size: 16px;
+	outline: none;
+}
+
+@media (hover)
+{
+
+a:hover
+{
+	text-decoration: underline;
+}
+
+}
+
+@media (max-width: 800px)
+{
+
+.only_full_width
+{
+	display: none;
+}
+
+}
+
+/* Parameter Control Styles */
+.ov_sidebar_parameter_section
+{
+	margin-bottom: 20px;
+}
+
+.ov_sidebar_parameter_section_title
+{
+	font-weight: bold;
+	margin-bottom: 10px;
+	color: var(--ov_foreground_color);
+}
+
+.ov_sidebar_parameter_setting
+{
+	margin-bottom: 15px;
+}
+
+.ov_sidebar_parameter_setting_label
+{
+	display: block;
+	margin-bottom: 5px;
+	font-size: 14px;
+	color: var(--ov_foreground_color);
+}
+
+.ov_sidebar_parameter_slider
+{
+	width: 100%;
+	margin-bottom: 5px;
+}
+
+.ov_sidebar_parameter_toggle
+{
+	margin-bottom: 10px;
+}
+
+.ov_sidebar_parameter_button
+{
+	margin-top: 10px;
+	width: 100%;
+}
+
+/* Mesh Transform Panel Styles */
+.ov_sidebar_no_selection
+{
+	text-align: center;
+	padding: 20px;
+	color: var(--ov_disabled_foreground_color);
+}
+
+.ov_sidebar_no_selection_text
+{
+	font-style: italic;
+}
