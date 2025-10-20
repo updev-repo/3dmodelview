@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Quaternion Fix Test</title>
+</head>
+<body>
+    <h1>Quaternion Fix Test</h1>
+    <p>Open browser console to see test results.</p>
+
+    <script type="module">
+        // Test the quaternion conversion
+        import { QuaternionFromXYZ } from './source/engine/geometry/quaternion.js';
+
+        console.log('Testing QuaternionFromXYZ...');
+
+        // Test with valid mode
+        let quaternion = QuaternionFromXYZ(0.1, 0.2, 0.3, 'XYZ');
+        console.log('XYZ mode result:', quaternion);
+
+        // Test with invalid mode (should return null)
+        let invalidQuaternion = QuaternionFromXYZ(0.1, 0.2, 0.3, 'xyz');
+        console.log('xyz mode result:', invalidQuaternion);
+
+        console.log('Test completed!');
+    </script>
+</body>
+</html>

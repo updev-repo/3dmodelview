@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>3D Viewer Parameter Control Test</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .test-section {
+            margin: 20px 0;
+            padding: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .parameter-list {
+            list-style-type: none;
+            padding: 0;
+        }
+        .parameter-list li {
+            margin: 10px 0;
+            padding: 5px;
+            background-color: #f5f5f5;
+            border-radius: 3px;
+        }
+        .parameter-name {
+            font-weight: bold;
+            color: #333;
+        }
+        .parameter-description {
+            color: #666;
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+<body>
+    <h1>3D Viewer Parameter Control System</h1>
+
+    <div class="test-section">
+        <h2>✅ Implementation Complete</h2>
+        <p>The 3D viewer now includes comprehensive parameter controls for model import and manipulation.</p>
+    </div>
+
+    <div class="test-section">
+        <h2>🎛️ Available Parameter Controls</h2>
+        <ul class="parameter-list">
+            <li>
+                <div class="parameter-name">Transform Parameters</div>
+                <div class="parameter-description">
+                    • Scale: Adjust model size (0.1x to 10x)<br>
+                    • Rotation: X, Y, Z axis rotation (-180° to +180°)<br>
+                    • Translation: X, Y, Z position offset (-10 to +10 units)
+                </div>
+            </li>
+            <li>
+                <div class="parameter-name">Material Parameters</div>
+                <div class="parameter-description">
+                    • Opacity: Material transparency (0.0 to 1.0)<br>
+                    • Roughness: Surface roughness (0.0 to 1.0)<br>
+                    • Metalness: Metallic appearance (0.0 to 1.0)
+                </div>
+            </li>
+            <li>
+                <div class="parameter-name">Display Parameters</div>
+                <div class="parameter-description">
+                    • Wireframe Mode: Toggle wireframe rendering<br>
+                    • Show Normals: Display surface normals<br>
+                    • Normal Length: Adjust normal vector length (0.1 to 5.0)
+                </div>
+            </li>
+            <li>
+                <div class="parameter-name">Processing Parameters</div>
+                <div class="parameter-description">
+                    • Merge Vertices: Combine duplicate vertices<br>
+                    • Generate Normals: Auto-generate surface normals<br>
+                    • Generate Tangents: Create tangent vectors for advanced shading
+                </div>
+            </li>
+        </ul>
+    </div>
+
+    <div class="test-section">
+        <h2>🚀 How to Use</h2>
+        <ol>
+            <li>Load a 3D model using the file input or drag & drop</li>
+            <li>Open the sidebar and click on the "Model Parameters" tab</li>
+            <li>Adjust any parameters using the sliders and toggles</li>
+            <li>Click "Apply Parameters" to reload the model with new settings</li>
+            <li>Use "Reset to Defaults" to restore original values</li>
+        </ol>
+    </div>
+
+    <div class="test-section">
+        <h2>🔧 Technical Implementation</h2>
+        <ul class="parameter-list">
+            <li>
+                <div class="parameter-name">Extended ImportSettings Class</div>
+                <div class="parameter-description">Added 15+ new parameters to the ImportSettings class in importer.js</div>
+            </li>
+            <li>
+                <div class="parameter-name">New SidebarParameterPanel</div>
+                <div class="parameter-description">Created comprehensive UI panel with organized sections for different parameter types</div>
+            </li>
+            <li>
+                <div class="parameter-name">Real-time Parameter Updates</div>
+                <div class="parameter-description">Parameters update immediately and can be applied to reload the model</div>
+            </li>
+            <li>
+                <div class="parameter-name">Integrated with Website</div>
+                <div class="parameter-description">Seamlessly integrated with existing website architecture and sidebar system</div>
+            </li>
+        </ul>
+    </div>
+
+    <div class="test-section">
+        <h2>📁 Files Modified</h2>
+        <ul>
+            <li><code>source/engine/import/importer.js</code> - Extended ImportSettings class</li>
+            <li><code>source/website/sidebarparameterpanel.js</code> - New parameter control panel</li>
+            <li><code>source/website/sidebar.js</code> - Added parameter panel integration</li>
+            <li><code>source/website/website.js</code> - Added parameter handling and reload functionality</li>
+            <li><code>source/website/css/core.css</code> - Added parameter control styling</li>
+        </ul>
+    </div>
+
+    <div class="test-section">
+        <h2>🎯 Next Steps</h2>
+        <p>To test the parameter control system:</p>
+        <ol>
+            <li>Open the main website (website/index.html)</li>
+            <li>Load any 3D model file</li>
+            <li>Navigate to the sidebar and find the "Model Parameters" tab</li>
+            <li>Experiment with different parameter values</li>
+            <li>Apply changes to see the model reload with new settings</li>
+        </ol>
+    </div>
+</body>
+</html>

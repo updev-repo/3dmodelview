@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Individual Mesh Transformation System</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            line-height: 1.6;
+        }
+        .demo-section {
+            margin: 20px 0;
+            padding: 20px;
+            border: 2px solid #007acc;
+            border-radius: 8px;
+            background-color: #f8f9fa;
+        }
+        .feature-list {
+            list-style-type: none;
+            padding: 0;
+        }
+        .feature-list li {
+            margin: 15px 0;
+            padding: 15px;
+            background-color: #e3f2fd;
+            border-left: 4px solid #2196f3;
+            border-radius: 4px;
+        }
+        .feature-title {
+            font-weight: bold;
+            color: #1976d2;
+            font-size: 1.1em;
+        }
+        .feature-description {
+            color: #424242;
+            margin-top: 8px;
+        }
+        .code-block {
+            background-color: #f5f5f5;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            padding: 10px;
+            font-family: 'Courier New', monospace;
+            margin: 10px 0;
+        }
+        .step-list {
+            counter-reset: step-counter;
+        }
+        .step-list li {
+            counter-increment: step-counter;
+            margin: 15px 0;
+            padding: 15px;
+            background-color: #fff3e0;
+            border-left: 4px solid #ff9800;
+            border-radius: 4px;
+            position: relative;
+        }
+        .step-list li::before {
+            content: counter(step-counter);
+            position: absolute;
+            left: -15px;
+            top: 15px;
+            background-color: #ff9800;
+            color: white;
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+        }
+        .highlight {
+            background-color: #fff9c4;
+            padding: 2px 4px;
+            border-radius: 3px;
+        }
+    </style>
+</head>
+<body>
+    <h1>🎯 Individual Mesh Transformation System</h1>
+
+    <div class="demo-section">
+        <h2>✅ Implementation Complete</h2>
+        <p>The 3D viewer now includes comprehensive <strong>individual mesh transformation controls</strong> that allow you to modify the position, rotation, and scale of each mesh item separately.</p>
+    </div>
+
+    <div class="demo-section">
+        <h2>🎛️ Mesh Transformation Features</h2>
+        <ul class="feature-list">
+            <li>
+                <div class="feature-title">Position Controls</div>
+                <div class="feature-description">
+                    • <strong>X, Y, Z Position</strong>: Move individual meshes along each axis (-50 to +50 units)<br>
+                    • <strong>Real-time Updates</strong>: See changes immediately as you adjust sliders<br>
+                    • <strong>Precise Control</strong>: 0.1 unit increments for fine positioning
+                </div>
+            </li>
+            <li>
+                <div class="feature-title">Rotation Controls</div>
+                <div class="feature-description">
+                    • <strong>X, Y, Z Rotation</strong>: Rotate meshes around each axis (-180° to +180°)<br>
+                    • <strong>Degree Precision</strong>: 1-degree increments for accurate rotation<br>
+                    • <strong>Independent Axes</strong>: Control each rotation axis separately
+                </div>
+            </li>
+            <li>
+                <div class="feature-title">Scale Controls</div>
+                <div class="feature-description">
+                    • <strong>X, Y, Z Scale</strong>: Scale meshes along each axis (0.1x to 5x)<br>
+                    • <strong>Uniform Scale</strong>: Toggle to keep all axes synchronized<br>
+                    • <strong>Non-uniform Scaling</strong>: Stretch or compress along specific axes
+                </div>
+            </li>
+            <li>
+                <div class="feature-title">Smart Controls</div>
+                <div class="feature-description">
+                    • <strong>Reset Transform</strong>: Instantly restore mesh to original position/rotation/scale<br>
+                    • <strong>Apply Transform</strong>: Apply changes to the selected mesh<br>
+                    • <strong>Auto-load Current Values</strong>: Automatically loads existing transform when selecting a mesh
+                </div>
+            </li>
+        </ul>
+    </div>
+
+    <div class="demo-section">
+        <h2>🚀 How to Use Individual Mesh Transformations</h2>
+        <ol class="step-list">
+            <li>
+                <strong>Load a 3D Model</strong><br>
+                Load any 3D model file using file input or drag & drop. Models with multiple meshes work best for demonstrating individual transformations.
+            </li>
+            <li>
+                <strong>Select a Mesh</strong><br>
+                In the navigator panel (left sidebar), click on the "Meshes" tab and select any individual mesh from the list. The mesh will be highlighted in the 3D view.
+            </li>
+            <li>
+                <strong>Open Transform Panel</strong><br>
+                In the right sidebar, click on the <span class="highlight">"Mesh Transform"</span> tab. This panel will show transformation controls for the selected mesh.
+            </li>
+            <li>
+                <strong>Adjust Position</strong><br>
+                Use the X, Y, Z position sliders to move the mesh in 3D space. Changes are visible in real-time as you adjust the sliders.
+            </li>
+            <li>
+                <strong>Modify Rotation</strong><br>
+                Use the X, Y, Z rotation sliders to rotate the mesh around each axis. Values are in degrees (-180° to +180°).
+            </li>
+            <li>
+                <strong>Change Scale</strong><br>
+                Use the X, Y, Z scale sliders to resize the mesh. Enable "Uniform Scale" to keep proportions, or disable it for non-uniform scaling.
+            </li>
+            <li>
+                <strong>Apply Changes</strong><br>
+                Click <span class="highlight">"Apply Transform"</span> to permanently apply the transformation to the mesh, or <span class="highlight">"Reset Transform"</span> to restore original values.
+            </li>
+            <li>
+                <strong>Select Different Meshes</strong><br>
+                Select other meshes in the navigator to transform them individually. Each mesh maintains its own transformation settings.
+            </li>
+        </ol>
+    </div>
+
+    <div class="demo-section">
+        <h2>🔧 Technical Implementation</h2>
+        <ul class="feature-list">
+            <li>
+                <div class="feature-title">New SidebarMeshTransformPanel</div>
+                <div class="feature-description">
+                    Created a dedicated panel with organized sections for position, rotation, and scale controls. Includes smart features like uniform scaling and real-time value loading.
+                </div>
+            </li>
+            <li>
+                <div class="feature-title">Mesh Selection Integration</div>
+                <div class="feature-description">
+                    Seamlessly integrated with the existing navigator system. When you select a mesh in the navigator, the transform panel automatically updates to show that mesh's current transformation.
+                </div>
+            </li>
+            <li>
+                <div class="feature-title">Transformation Matrix System</div>
+                <div class="feature-description">
+                    Uses the existing transformation matrix system to apply position, rotation, and scale changes. Maintains compatibility with the 3D engine's coordinate system.
+                </div>
+            </li>
+            <li>
+                <div class="feature-title">Real-time Rendering</div>
+                <div class="feature-description">
+                    Changes are applied immediately to the 3D scene and rendered in real-time. No need to reload the model or restart the viewer.
+                </div>
+            </li>
+        </ul>
+    </div>
+
+    <div class="demo-section">
+        <h2>📁 Files Created/Modified</h2>
+        <div class="code-block">
+            <strong>New Files:</strong><br>
+            • source/website/sidebarmeshtransformpanel.js - Mesh transformation control panel<br><br>
+
+            <strong>Modified Files:</strong><br>
+            • source/website/sidebar.js - Added mesh transform panel integration<br>
+            • source/website/website.js - Added mesh transformation handling methods<br>
+            • source/website/css/core.css - Added styling for transform controls
+        </div>
+    </div>
+
+    <div class="demo-section">
+        <h2>🎯 Use Cases</h2>
+        <ul class="feature-list">
+            <li>
+                <div class="feature-title">Architectural Models</div>
+                <div class="feature-description">
+                    Move individual building components, rotate doors/windows, scale furniture to fit spaces
+                </div>
+            </li>
+            <li>
+                <div class="feature-title">Product Design</div>
+                <div class="feature-description">
+                    Adjust individual parts of assemblies, reposition components, test different configurations
+                </div>
+            </li>
+            <li>
+                <div class="feature-title">Game Assets</div>
+                <div class="feature-description">
+                    Position individual objects in scenes, rotate props, scale elements for different game levels
+                </div>
+            </li>
+            <li>
+                <div class="feature-title">Educational Content</div>
+                <div class="feature-description">
+                    Demonstrate transformations, show how individual parts move in mechanical systems
+                </div>
+            </li>
+        </ul>
+    </div>
+
+    <div class="demo-section">
+        <h2>✨ Key Benefits</h2>
+        <ul>
+            <li><strong>Individual Control</strong>: Transform each mesh independently without affecting others</li>
+            <li><strong>Real-time Feedback</strong>: See changes immediately as you adjust controls</li>
+            <li><strong>Intuitive Interface</strong>: Simple sliders and toggles for easy operation</li>
+            <li><strong>Precise Control</strong>: Fine-grained adjustments with appropriate increments</li>
+            <li><strong>Non-destructive</strong>: Reset to original values at any time</li>
+            <li><strong>Integrated Workflow</strong>: Works seamlessly with existing selection and navigation</li>
+        </ul>
+    </div>
+
+    <div class="demo-section">
+        <h2>🎮 Try It Out!</h2>
+        <p>To test the individual mesh transformation system:</p>
+        <ol>
+            <li>Open the main website (website/index.html)</li>
+            <li>Load a 3D model with multiple meshes (like a complex architectural model or mechanical assembly)</li>
+            <li>Use the navigator to select individual meshes</li>
+            <li>Switch to the "Mesh Transform" tab in the sidebar</li>
+            <li>Experiment with position, rotation, and scale controls</li>
+            <li>Apply transformations and see how individual meshes move independently</li>
+        </ol>
+    </div>
+</body>
+</html>
